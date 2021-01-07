@@ -25,6 +25,7 @@ class DiscordStatusLed {
         this.discordClient.on('ready', () => {
             console.log('Discord client ready');
         });
+
         this.discordClient.on('voiceStateUpdate', (oldMember, newMember) => {
             if (newMember.user.id != process.env.DISCORD_USER_ID) { return; }
 
